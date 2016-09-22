@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector: 'color-picker',
@@ -11,7 +11,12 @@ export class ColorPicker {
     @Input()
     color: string;
 
+    @Output('color') newEvent = new EventEmitter();
+    
     change(data: string) {
         this.color = data;
+        this.newEvent.emit(data);
     }
+
+
 }

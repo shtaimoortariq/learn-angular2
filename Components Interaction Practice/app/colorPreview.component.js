@@ -9,32 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ColorPicker = (function () {
-    function ColorPicker() {
-        this.newEvent = new core_1.EventEmitter();
+var ColorPreview = (function () {
+    function ColorPreview() {
     }
-    ColorPicker.prototype.change = function (data) {
-        this.color = data;
-        this.newEvent.emit(data);
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
-    ], ColorPicker.prototype, "color", void 0);
-    __decorate([
-        core_1.Output('color'), 
-        __metadata('design:type', Object)
-    ], ColorPicker.prototype, "newEvent", void 0);
-    ColorPicker = __decorate([
+    ], ColorPreview.prototype, "color", void 0);
+    ColorPreview = __decorate([
         core_1.Component({
-            selector: 'color-picker',
-            moduleId: module.id,
-            templateUrl: 'colorPicker.component.html',
-            styleUrls: ['colorPicker.component.css']
+            selector: 'color-preview',
+            template: "\n            <p [ngStyle]=\"{'color': color}\">Color Preview</p>\n            "
         }), 
         __metadata('design:paramtypes', [])
-    ], ColorPicker);
-    return ColorPicker;
+    ], ColorPreview);
+    return ColorPreview;
 }());
-exports.ColorPicker = ColorPicker;
-//# sourceMappingURL=colorPicker.component.js.map
+exports.ColorPreview = ColorPreview;
+//# sourceMappingURL=colorPreview.component.js.map

@@ -12,13 +12,14 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var colorPicker_component_1 = require('./colorPicker.component');
+var colorPreview_component_1 = require('./colorPreview.component');
 var MainModule = (function () {
     function MainModule() {
     }
     MainModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent, colorPicker_component_1.ColorPicker],
+            declarations: [app_component_1.AppComponent, colorPicker_component_1.ColorPicker, colorPreview_component_1.ColorPreview],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

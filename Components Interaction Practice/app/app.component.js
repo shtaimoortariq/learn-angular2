@@ -15,7 +15,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    \n        <color-picker><color-picker>\n        <button> Reset </button>\n                "
+            moduleId: module.id,
+            template: "<color-picker #refrence (color)= \"preview.color = $event\"></color-picker>\n                <color-preview #preview></color-preview>\n\n                <button (click)=\"refrence.change('black')\" class=\"button\"> Reset </button>\n                "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
