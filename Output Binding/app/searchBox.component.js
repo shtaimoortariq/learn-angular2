@@ -9,22 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SearchBox = (function () {
-    function SearchBox() {
-        this.text = "Search Your Text";
+var SearchBoxComponent = (function () {
+    function SearchBoxComponent() {
+        this.myPlaceholder = "Seach The Text";
+        this.newEvent = new core_1.EventEmitter();
     }
+    SearchBoxComponent.prototype.myEvent = function (event) {
+        this.newEvent.emit(event);
+    };
+    SearchBoxComponent.prototype.clear = function (refrence) {
+        refrence.value = "";
+    };
     __decorate([
-        core_1.Input('placeholder'), 
+        core_1.Input('myPlaceholder'), 
         __metadata('design:type', Object)
-    ], SearchBox.prototype, "text", void 0);
-    SearchBox = __decorate([
+    ], SearchBoxComponent.prototype, "myPlaceholder", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SearchBoxComponent.prototype, "newEvent", void 0);
+    SearchBoxComponent = __decorate([
         core_1.Component({
             selector: 'Search-Box',
-            template: "<input type=\"text\" placeholder=\"{{text}}\"/>\n                <button>clear</button>\n    "
+            moduleId: module.id,
+            templateUrl: 'searchBox.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], SearchBox);
-    return SearchBox;
+    ], SearchBoxComponent);
+    return SearchBoxComponent;
 }());
-exports.SearchBox = SearchBox;
+exports.SearchBoxComponent = SearchBoxComponent;
 //# sourceMappingURL=searchBox.component.js.map

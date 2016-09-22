@@ -9,21 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var rootComponent_1 = require('./rootComponent');
-var searchBox_component_1 = require('./searchBox.component');
-var AppModule = (function () {
-    function AppModule() {
+var RootComponent = (function () {
+    function RootComponent() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [rootComponent_1.RootComponent, searchBox_component_1.SearchBox],
-            bootstrap: [rootComponent_1.RootComponent]
+    RootComponent.prototype.theEventFromChild = function (event) {
+        alert("The Event From Child");
+    };
+    RootComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: '<Search-Box myPlaceholder = "Please Search" (newEvent)="theEventFromChild($event)"></Search-Box>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], RootComponent);
+    return RootComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=module.js.map
+exports.RootComponent = RootComponent;
+//# sourceMappingURL=rootComponent.js.map

@@ -9,17 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var RootComponent = (function () {
-    function RootComponent() {
+var platform_browser_1 = require('@angular/platform-browser');
+var rootComponent_1 = require('./rootComponent');
+var searchBox_component_1 = require('./searchBox.component');
+var AppModule = (function () {
+    function AppModule() {
     }
-    RootComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: '<Search-Box placeholder = "Please Search"></Search-Box>'
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule],
+            declarations: [rootComponent_1.RootComponent, searchBox_component_1.SearchBoxComponent],
+            bootstrap: [rootComponent_1.RootComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], RootComponent);
-    return RootComponent;
+    ], AppModule);
+    return AppModule;
 }());
-exports.RootComponent = RootComponent;
-//# sourceMappingURL=rootComponent.js.map
+exports.AppModule = AppModule;
+//# sourceMappingURL=module.js.map
